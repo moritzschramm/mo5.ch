@@ -36,42 +36,58 @@
 	<main></main>
 
 	<script>
+var prev, next;
 function setup() {
 	createCanvas(windowWidth, windowHeight, WEBGL);
 	angleMode(DEGREES);
+        prev = createFramebuffer({ format: FLOAT });
+        next = createFramebuffer({ format: FLOAT });
+        imageMode(CENTER);
+        background(30);
 }
 
 function draw() {
-	background(0);
 
-	rotateX(50);
+        [prev, next] = [next, prev];
+
+        next.begin();
+        clear();
+
+        push();
+        image(prev, 0, 0);
+        pop();
+
+        background('rgba(0,0,0,0.03)');
+
+	rotateX(frameCount / 20);
 	noFill();
 	stroke(255);
 
-	for (var i = 0; i < 100; i++) {
+	for (var i = 0; i < 200; i++) {
 
-		var r = map(sin(frameCount / 2), -1, 1, 100, 200);
-		var g = map(i, 0, 100, 100, 200);
-		var b = map(cos(frameCount), -1, 1, 200, 100);
-		var alpha = map(i, 0, 100, 255, 0);
+		var r = map(sin(frameCount / 2), -1, 1, 50, 200);
+		var g = map(i, 0, 200, 50, 200);
+		var b = map(cos(frameCount), -1, 1, 200, 50);
+		var alpha = map(i, 0, 200, 255, 0);
 
 		stroke(r, g, b, alpha);
 
-		rotate(frameCount / 80);
+		rotate(frameCount / 150);
 
 		beginShape();
-		for (var j = 0; j < 360; j += 90) {
+		for (var j = 0; j < 360; j += 60) {
 
-			var rad = i * 4;
+			var rad = i*3;
 			var x = rad * cos(j);
 			var y = rad * sin(j);
-			var z = sin(frameCount * 2 + i * 5) * 50;
+			var z = sin(frameCount + i * 3) * 150;
 
-			vertex(x, y, z+150);
+			vertex(x, y, z);
 		}
 		endShape(CLOSE);
 	}
-
+        next.end();
+        image(next, 0, 0);
 }
 	</script>
 </body>
