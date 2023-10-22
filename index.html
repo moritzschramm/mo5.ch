@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>mo5.ch</title>
+	<meta name="description" content="MO5.CH">
+	<link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="/icon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="/icon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="/icon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="/icon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="/icon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="/icon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="/icon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/icon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="/icon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/icon/favicon-16x16.png">
+	<link rel="manifest" href="/icon/manifest.json">
+	<meta name="msapplication-TileColor" content="#000000">
+	<meta name="msapplication-TileImage" content="/icon/ms-icon-144x144.png">
+	<meta name="theme-color" content="#000000">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js" integrity="sha512-bcfltY+lNLlNxz38yBBm/HLaUB1gTV6I0e+fahbF9pS6roIdzUytozWdnFV8ZnM6cSAG5EbmO0ag0a/fLZSG4Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<style>
+		body {
+			overflow: hidden;
+			margin: 0;
+			padding: 0;
+			background-color: #000000;
+		}
+	</style>
+</head>
+<body>
+	<main></main>
+
+	<script>
+function setup() {
+	createCanvas(windowWidth, windowHeight, WEBGL);
+	angleMode(DEGREES);
+}
+
+function draw() {
+	background(0);
+
+	rotateX(50);
+	noFill();
+	stroke(255);
+
+	for (var i = 0; i < 100; i++) {
+
+		var r = map(sin(frameCount / 2), -1, 1, 100, 200);
+		var g = map(i, 0, 100, 100, 200);
+		var b = map(cos(frameCount), -1, 1, 200, 100);
+		var alpha = map(i, 0, 100, 255, 0);
+
+		stroke(r, g, b, alpha);
+
+		rotate(frameCount / 80);
+
+		beginShape();
+		for (var j = 0; j < 360; j += 90) {
+
+			var rad = i * 4;
+			var x = rad * cos(j);
+			var y = rad * sin(j);
+			var z = sin(frameCount * 2 + i * 5) * 50;
+
+			vertex(x, y, z+150);
+		}
+		endShape(CLOSE);
+	}
+
+}
+	</script>
+</body>
+</html>
