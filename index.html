@@ -37,6 +37,14 @@
 
 	<script>
 var prev, next;
+var r1 = 200, r2 = 100;
+var g1 = 200, g2 = 100;
+var b1 = 200, b2 = 100;
+var iStart = 0, iEnd = 200;
+var jStep = 60;
+var radStep = 3;
+var amp = 100;
+
 function setup() {
 	createCanvas(windowWidth, windowHeight, WEBGL);
 	angleMode(DEGREES);
@@ -57,30 +65,30 @@ function draw() {
         image(prev, 0, 0);
         pop();
 
-        background('rgba(0,0,0,0.03)');
+        background('rgba(0,0,0,0.02)');
 
 	rotateX(frameCount / 20);
 	noFill();
 	stroke(255);
 
-	for (var i = 0; i < 200; i++) {
+	for (var i = iStart; i < iEnd; i++) {
 
-		var r = map(sin(frameCount / 2), -1, 1, 50, 200);
-		var g = map(i, 0, 200, 50, 200);
-		var b = map(cos(frameCount), -1, 1, 200, 50);
-		var alpha = map(i, 0, 200, 255, 0);
+		var r = map(sin(frameCount), -1, 1, r1, r2);
+		var g = map(i, iStart, iEnd, g1, g2);
+		var b = map(cos(frameCount / 2), -1, 1, b1, b2);
+		var alpha = map(i, iStart, iEnd, 255, 0);
 
 		stroke(r, g, b, alpha);
 
 		rotate(frameCount / 150);
 
 		beginShape();
-		for (var j = 0; j < 360; j += 60) {
+		for (var j = 0; j < 360; j += jStep) {
 
-			var rad = i*3;
+			var rad = i * radStep;
 			var x = rad * cos(j);
 			var y = rad * sin(j);
-			var z = sin(frameCount + i * 3) * 150;
+			var z = sin(frameCount + i * radStep) * amp;
 
 			vertex(x, y, z);
 		}
