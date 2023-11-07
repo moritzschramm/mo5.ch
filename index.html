@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>mo5.ch</title>
     <meta name="description" content="mo5.ch">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.7.0/p5.min.js" as="script">
+
     <link rel="apple-touch-icon" sizes="57x57" href="/icon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="/icon/apple-icon-60x60.png">
     <link rel="apple-touch-icon" sizes="72x72" href="/icon/apple-icon-72x72.png">
@@ -48,24 +50,24 @@ var amp = 100;
 function setup() {
     createCanvas(windowWidth, windowHeight, WEBGL);
     angleMode(DEGREES);
-        prev = createFramebuffer({ format: FLOAT });
-        next = createFramebuffer({ format: FLOAT });
-        imageMode(CENTER);
-        background(30);
+    prev = createFramebuffer({ format: FLOAT });
+    next = createFramebuffer({ format: FLOAT });
+    imageMode(CENTER);
+    background(30);
 }
 
 function draw() {
 
-        [prev, next] = [next, prev];
+    [prev, next] = [next, prev];
 
-        next.begin();
-        clear();
+    next.begin();
+    clear();
 
-        push();
-        image(prev, 0, 0);
-        pop();
+    push();
+    image(prev, 0, 0);
+    pop();
 
-        background('rgba(0,0,0,0.02)');
+    background('rgba(0,0,0,0.02)');
 
     rotateX(frameCount / 20);
     noFill();
@@ -94,13 +96,14 @@ function draw() {
         }
         endShape(CLOSE);
     }
-        next.end();
-        image(next, 0, 0);
+    next.end();
+    image(next, 0, 0);
 }
 
-window.addEventListener("resize", function(event) {
+function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
-});
+    background(30);
+}
     </script>
 </body>
 </html>
