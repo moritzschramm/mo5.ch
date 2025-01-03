@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>photography on mo5.ch/photography</title>
+    <link>https://mo5.ch/photography/</link>
+    <description>Recent content in photography on mo5.ch/photography</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <managingEditor>mail@mo5.ch (Moritz Schramm)</managingEditor>
+    <webMaster>mail@mo5.ch (Moritz Schramm)</webMaster>
+    <copyright>© 2025</copyright><atom:link href="https://mo5.ch/photography/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>leftovers</title>
+      <link>https://mo5.ch/photography/misc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>mail@mo5.ch (Moritz Schramm)</author>
+      <guid>https://mo5.ch/photography/misc/</guid><media:content url="https://mo5.ch/photography/misc/MSF00043_hu2532153517475860164.JPG" type="image/jpeg"/>
+        <description>
+          &lt;img src=&quot;https://mo5.ch/photography/misc/MSF00043_hu2532153517475860164.JPG&quot; /&gt;
+          &lt;p&gt;not assignable to any category&lt;/p&gt;
+        </description></item>
+    <item>
+      <title>signs of the universe</title>
+      <link>https://mo5.ch/photography/signs/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>mail@mo5.ch (Moritz Schramm)</author>
+      <guid>https://mo5.ch/photography/signs/</guid><media:content url="https://mo5.ch/photography/signs/MSF00036_hu10990860610940339812.JPG" type="image/jpeg"/>
+        <description>
+          &lt;img src=&quot;https://mo5.ch/photography/signs/MSF00036_hu10990860610940339812.JPG&quot; /&gt;
+          &lt;p&gt;some funny, some weird, some interesting signs&lt;/p&gt;
+        </description></item>
+    <item>
+      <title>winter</title>
+      <link>https://mo5.ch/photography/winter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>mail@mo5.ch (Moritz Schramm)</author>
+      <guid>https://mo5.ch/photography/winter/</guid><media:content url="https://mo5.ch/photography/winter/MSF00063_hu6268453076806661775.JPG" type="image/jpeg"/>
+        <description>
+          &lt;img src=&quot;https://mo5.ch/photography/winter/MSF00063_hu6268453076806661775.JPG&quot; /&gt;
+          &lt;p&gt;&lt;no value&gt;&lt;/p&gt;
+        </description></item>
+  </channel>
+</rss>
