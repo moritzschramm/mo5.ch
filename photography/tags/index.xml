@@ -2,12 +2,12 @@
 <rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on mo5.ch/photography</title>
-    <link>https://mo5.ch/photography/tags/</link>
+    <link>http://localhost:1313/photography/tags/</link>
     <description>Recent content in Tags on mo5.ch/photography</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>mail@mo5.ch (Moritz Schramm)</managingEditor>
     <webMaster>mail@mo5.ch (Moritz Schramm)</webMaster>
-    <copyright>© 2025</copyright><atom:link href="https://mo5.ch/photography/tags/index.xml" rel="self" type="application/rss+xml" />
+    <copyright>© 2025</copyright><atom:link href="http://localhost:1313/photography/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

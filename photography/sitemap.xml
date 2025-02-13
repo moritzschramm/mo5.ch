@@ -2,18 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://mo5.ch/photography/about/</loc>
+    <loc>http://localhost:1313/photography/about/</loc>
   </url><url>
-    <loc>https://mo5.ch/photography/categories/</loc>
+    <loc>http://localhost:1313/photography/buildings/</loc>
   </url><url>
-    <loc>https://mo5.ch/photography/misc/</loc>
+    <loc>http://localhost:1313/photography/categories/</loc>
   </url><url>
-    <loc>https://mo5.ch/photography/</loc>
+    <loc>http://localhost:1313/photography/heaven/</loc>
   </url><url>
-    <loc>https://mo5.ch/photography/signs/</loc>
+    <loc>http://localhost:1313/photography/misc/</loc>
   </url><url>
-    <loc>https://mo5.ch/photography/tags/</loc>
+    <loc>http://localhost:1313/photography/</loc>
   </url><url>
-    <loc>https://mo5.ch/photography/winter/</loc>
+    <loc>http://localhost:1313/photography/signs/</loc>
+  </url><url>
+    <loc>http://localhost:1313/photography/tags/</loc>
+  </url><url>
+    <loc>http://localhost:1313/photography/winter/</loc>
   </url>
 </urlset>
