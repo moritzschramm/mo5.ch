@@ -31,12 +31,28 @@
             margin: 0;
             padding: 0;
             background-color: #000000;
+            position: relative;
+        }
+        a.link {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-decoration: none;
+            font-size: 3rem;
+            font-family: 'Courier New', Courier, monospace;
+            color: #ddd;
+            text-shadow:
+                    -1px -1px 0 #444,
+                     1px -1px 0 #444,
+                    -1px  1px 0 #444,
+                     1px  1px 0 #444;
         }
     </style>
 </head>
 <body>
     <main></main>
-
+    <a href="/photography/" class="link">go to gallery &rarr;</a>
     <script>
 var prev, next;
 var r1 = 200, r2 = 100;
