@@ -35,18 +35,34 @@
         }
         a.link {
             position: absolute;
-            top: 50%;
+            bottom: 2%;
             left: 50%;
-            transform: translate(-50%, -50%);
+            transform: translate(-50%, 0%);
             text-decoration: none;
-            font-size: 2rem;
-            font-family: 'Courier New', Courier, monospace;
-            color: #ddd;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            text-align: center;
+            font-weight: lighter;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            transition: 0.2s ease;
+            padding: 2rem;
+            border-radius: 100px;
+            -webkit-backdrop-filter: blur(40px);
+            backdrop-filter: blur(40px);
+            color: #eee;
             text-shadow:
-                    -1px -1px 0 #444,
-                     1px -1px 0 #444,
-                    -1px  1px 0 #444,
-                     1px  1px 0 #444;
+                    0px 0px 2px #000,
+                    0px 0px 2px #000,
+                    0px 0px 2px #000,
+                    0px 0px 2px #000;
+        }
+        a.link:hover {
+            color: #fff;
+            text-shadow: 0px 0px 4px #000, 0px 0px 4px #000;
+            transition: 0.35s ease;
+            -webkit-backdrop-filter: blur(15px);
+            backdrop-filter: blur(15px);
+            transform: translate(-50%, -1px);
         }
     </style>
 </head>
