@@ -74,7 +74,7 @@
 (function () {
     "use strict";
 
-    var RING_COUNT = 150; // 150
+    var RING_COUNT = 200; // 150
     var RAD_STEP = 3.0; // 3.0
     var AMP = 100.0;
     var ANGLES = [0, 60, 120, 180, 240, 300];
@@ -83,6 +83,17 @@
     var FRAME_INTERVAL = 1000 / TARGET_FPS;
     var ANIMATION_SPEED = 1.7; // multiplies how far the animation advances per rendered frame
     var MAX_PIXEL_RATIO = 2.5; // caps render resolution on very high-DPI displays
+
+    var BASE_TWIST_RATE = 1 / 150; // per-ring twist, degrees per frame (was hardcoded uFrame/150.0)
+    var BASE_TILT_RATE = 1 / 20;   // global tilt, degrees per frame (was hardcoded uFrame/20.0)
+
+    // Slow, independent sine drifts (real time, not frame-coupled) so the
+    // tunnel's width, depth and spin gently breathe instead of looping
+    // identically forever. Frequencies/phases are mismatched on purpose so
+    // the combined motion doesn't feel like it repeats on a short cycle.
+    function driftFactor(seconds, freq, phase, amount) {
+        return 1 + amount * Math.sin(seconds * freq + phase);
+    }
 
     var canvas = document.createElement('canvas');
     document.querySelector('main').appendChild(canvas);
@@ -209,18 +220,26 @@
         'uniform float uFrame;\n' +
         'uniform float uR;\n' +
         'uniform float uB;\n' +
+        'uniform float uRadStep;\n' +
+        'uniform float uAmp;\n' +
+        'uniform float uTwistRate;\n' +
+        'uniform float uTiltRate;\n' +
+        'uniform float uRippleFront;\n' +
+        'uniform float uRippleStrength;\n' +
         'uniform mat4 uPV;\n' +
         'out vec4 vColor;\n' +
         'void main() {\n' +
-        '    float rad = aRing * ' + RAD_STEP.toFixed(1) + ';\n' +
+        '    float rad = aRing * uRadStep;\n' +
         '    float x = rad * cos(radians(aAngle));\n' +
         '    float y = rad * sin(radians(aAngle));\n' +
-        '    float z = sin(radians(uFrame + aRing * ' + RAD_STEP.toFixed(1) + ')) * ' + AMP.toFixed(1) + ';\n' +
-        '    float ringRot = radians((aRing + 1.0) * (uFrame / 150.0));\n' +
+        '    float z = sin(radians(uFrame + aRing * uRadStep)) * uAmp;\n' +
+        '    float rippleDiff = (aRing - uRippleFront) / 12.0;\n' +
+        '    z += uRippleStrength * exp(-rippleDiff * rippleDiff);\n' +
+        '    float ringRot = radians((aRing + 1.0) * uFrame * uTwistRate);\n' +
         '    float cs = cos(ringRot);\n' +
         '    float sn = sin(ringRot);\n' +
         '    vec2 rxy = vec2(x * cs - y * sn, x * sn + y * cs);\n' +
-        '    float tilt = radians(uFrame / 20.0);\n' +
+        '    float tilt = radians(uFrame * uTiltRate);\n' +
         '    float tc = cos(tilt);\n' +
         '    float ts = sin(tilt);\n' +
         '    float ny = rxy.y * tc - z * ts;\n' +
@@ -248,6 +267,12 @@
         uFrame: gl.getUniformLocation(ringProgram, 'uFrame'),
         uR: gl.getUniformLocation(ringProgram, 'uR'),
         uB: gl.getUniformLocation(ringProgram, 'uB'),
+        uRadStep: gl.getUniformLocation(ringProgram, 'uRadStep'),
+        uAmp: gl.getUniformLocation(ringProgram, 'uAmp'),
+        uTwistRate: gl.getUniformLocation(ringProgram, 'uTwistRate'),
+        uTiltRate: gl.getUniformLocation(ringProgram, 'uTiltRate'),
+        uRippleFront: gl.getUniformLocation(ringProgram, 'uRippleFront'),
+        uRippleStrength: gl.getUniformLocation(ringProgram, 'uRippleStrength'),
         uPV: gl.getUniformLocation(ringProgram, 'uPV')
     };
 
@@ -373,6 +398,8 @@
 
     var prevFBO, nextFBO, msaaFBO;
     var pvMatrix = new Float32Array(16);
+    var projectionMatrix = new Float32Array(16);
+    var cameraZ = 0;
 
     function resize() {
         var cssWidth = window.innerWidth;
@@ -404,15 +431,41 @@
         gl.clear(gl.COLOR_BUFFER_BIT);
         gl.bindFramebuffer(gl.FRAMEBUFFER, null);
 
-        var cameraZ = (cssHeight / 2.0) / Math.tan(Math.PI * 30.0 / 180.0);
+        cameraZ = (cssHeight / 2.0) / Math.tan(Math.PI * 30.0 / 180.0);
         var aspect = cssWidth / cssHeight;
-        var projection = mat4Perspective(Math.PI / 3.0, aspect, cameraZ * 0.1, cameraZ * 10.0);
-        var view = mat4LookAt([0, 0, cameraZ], [0, 0, 0], [0, 1, 0]);
-        mat4Multiply(pvMatrix, projection, view);
+        projectionMatrix = mat4Perspective(Math.PI / 3.0, aspect, cameraZ * 0.1, cameraZ * 10.0);
     }
 
     var frameCount = 0;
     var lastFrameTime = 0;
+
+    // pointer parallax: the camera drifts toward wherever the pointer is,
+    // smoothed so it eases rather than snaps
+    var POINTER_PARALLAX = 0.3; // fraction of camera distance the eye can shift by
+    var POINTER_SMOOTHING = 0.06;
+    var pointerTargetX = 0, pointerTargetY = 0;
+    var pointerX = 0, pointerY = 0;
+
+    window.addEventListener('pointermove', function (e) {
+        pointerTargetX = (e.clientX / window.innerWidth) * 2 - 1;
+        pointerTargetY = (e.clientY / window.innerHeight) * 2 - 1;
+    });
+    window.addEventListener('pointerleave', function () {
+        pointerTargetX = 0;
+        pointerTargetY = 0;
+    });
+
+    // click effects: a click triggers one of a few decaying, randomly
+    // chosen "kicks" that fade back out over CLICK_DURATION
+    var CLICK_EFFECTS = ['ripple'];
+    var CLICK_DURATION = 3200; // ms; also controls how fast the ripple front travels across the rings
+    var activeEffect = null;
+    var effectStartTime = 0;
+
+    window.addEventListener('pointerdown', function () {
+        activeEffect = CLICK_EFFECTS[Math.floor(Math.random() * CLICK_EFFECTS.length)];
+        effectStartTime = performance.now();
+    });
 
     function render(now) {
         requestAnimationFrame(render);
@@ -422,6 +475,25 @@
             return;
         }
         lastFrameTime = now - (elapsed % FRAME_INTERVAL);
+
+        var effectEnvelope = 0;
+        var effectElapsed = 0;
+        if (activeEffect) {
+            effectElapsed = now - effectStartTime;
+            if (effectElapsed >= CLICK_DURATION) {
+                activeEffect = null;
+            } else {
+                effectEnvelope = Math.pow(1 - effectElapsed / CLICK_DURATION, 2); // ease out
+            }
+        }
+        var rippleStrength = (activeEffect === 'ripple') ? effectEnvelope * 150.0 : 0;
+        var rippleFront = (activeEffect === 'ripple') ? (effectElapsed / CLICK_DURATION) * (RING_COUNT * 1.3) : 0;
+
+        pointerX += (pointerTargetX - pointerX) * POINTER_SMOOTHING;
+        pointerY += (pointerTargetY - pointerY) * POINTER_SMOOTHING;
+        var maxOffset = cameraZ * POINTER_PARALLAX;
+        var eye = [pointerX * maxOffset, -pointerY * maxOffset, cameraZ];
+        mat4Multiply(pvMatrix, projectionMatrix, mat4LookAt(eye, [0, 0, 0], [0, 1, 0]));
 
         var tmp = prevFBO; prevFBO = nextFBO; nextFBO = tmp;
 
@@ -442,6 +514,12 @@
         var r = map(Math.sin(radians(frameCount)), -1, 1, 200, 100) / 255;
         var b = map(Math.cos(radians(frameCount / 2)), -1, 1, 200, 100) / 255;
 
+        var seconds = now / 1000;
+        var radStep = RAD_STEP * driftFactor(seconds, 0.03, 2.0, 0.15);
+        var amp = AMP * driftFactor(seconds, 0.05, 0.0, 0.25);
+        var twistRate = BASE_TWIST_RATE * driftFactor(seconds, 0.02, 4.0, 0.4);
+        var tiltRate = BASE_TILT_RATE * driftFactor(seconds, 0.015, 1.0, 0.3);
+
         gl.useProgram(ringProgram);
         gl.bindBuffer(gl.ARRAY_BUFFER, ringBuffer);
         gl.enableVertexAttribArray(ringLocs.aRing);
@@ -451,6 +529,12 @@
         gl.uniform1f(ringLocs.uFrame, frameCount);
         gl.uniform1f(ringLocs.uR, r);
         gl.uniform1f(ringLocs.uB, b);
+        gl.uniform1f(ringLocs.uRadStep, radStep);
+        gl.uniform1f(ringLocs.uAmp, amp);
+        gl.uniform1f(ringLocs.uTwistRate, twistRate);
+        gl.uniform1f(ringLocs.uTiltRate, tiltRate);
+        gl.uniform1f(ringLocs.uRippleFront, rippleFront);
+        gl.uniform1f(ringLocs.uRippleStrength, rippleStrength);
         gl.uniformMatrix4fv(ringLocs.uPV, false, pvMatrix);
         gl.drawArrays(gl.LINES, 0, ringVertexCount);
 
