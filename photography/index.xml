@@ -1,133 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>photography on mo5.ch/photography</title>
-    <link>https://mo5.ch/photography/</link>
-    <description>Recent content in photography on mo5.ch/photography</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <managingEditor>mail@mo5.ch (Moritz Schramm)</managingEditor>
-    <webMaster>mail@mo5.ch (Moritz Schramm)</webMaster>
-    <copyright>© 2026</copyright><atom:link href="https://mo5.ch/photography/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>blossom</title>
-      <link>https://mo5.ch/photography/flowers/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>mail@mo5.ch (Moritz Schramm)</author>
-      <guid>https://mo5.ch/photography/flowers/</guid>
-        <media:content url="https://mo5.ch/photography/flowers/MSF00903_hu_2d62369e89cfaa61.JPG" type="image/jpeg"/>
-        <description>
-          &lt;img src=&quot;https://mo5.ch/photography/flowers/MSF00903_hu_2d62369e89cfaa61.JPG&quot; /&gt;
-          &lt;p&gt;&lt;no value&gt;&lt;/p&gt;
-        </description></item>
-    <item>
-      <title>botanical</title>
-      <link>https://mo5.ch/photography/green/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>mail@mo5.ch (Moritz Schramm)</author>
-      <guid>https://mo5.ch/photography/green/</guid>
-        <media:content url="https://mo5.ch/photography/green/MSF00640_hu_bb18f379bb2d5ca3.JPG" type="image/jpeg"/>
-        <description>
-          &lt;img src=&quot;https://mo5.ch/photography/green/MSF00640_hu_bb18f379bb2d5ca3.JPG&quot; /&gt;
-          &lt;p&gt;&lt;no value&gt;&lt;/p&gt;
-        </description></item>
-    <item>
-      <title>branches</title>
-      <link>https://mo5.ch/photography/trees/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>mail@mo5.ch (Moritz Schramm)</author>
-      <guid>https://mo5.ch/photography/trees/</guid>
-        <media:content url="https://mo5.ch/photography/trees/MSF00879_hu_709b68050c6f42c0.JPG" type="image/jpeg"/>
-        <description>
-          &lt;img src=&quot;https://mo5.ch/photography/trees/MSF00879_hu_709b68050c6f42c0.JPG&quot; /&gt;
-          &lt;p&gt;&lt;no value&gt;&lt;/p&gt;
-        </description></item>
-    <item>
-      <title>clouds</title>
-      <link>https://mo5.ch/photography/clouds/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>mail@mo5.ch (Moritz Schramm)</author>
-      <guid>https://mo5.ch/photography/clouds/</guid>
-        <media:content url="https://mo5.ch/photography/clouds/MSF00940_hu_f096e4213f5189b2.JPG" type="image/jpeg"/>
-        <description>
-          &lt;img src=&quot;https://mo5.ch/photography/clouds/MSF00940_hu_f096e4213f5189b2.JPG&quot; /&gt;
-          &lt;p&gt;&lt;no value&gt;&lt;/p&gt;
-        </description></item>
-    <item>
-      <title>dune</title>
-      <link>https://mo5.ch/photography/dune/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>mail@mo5.ch (Moritz Schramm)</author>
-      <guid>https://mo5.ch/photography/dune/</guid>
-        <media:content url="https://mo5.ch/photography/dune/MSF01134_hu_167ee50099a57b0b.JPG" type="image/jpeg"/>
-        <description>
-          &lt;img src=&quot;https://mo5.ch/photography/dune/MSF01134_hu_167ee50099a57b0b.JPG&quot; /&gt;
-          &lt;p&gt;&lt;no value&gt;&lt;/p&gt;
-        </description></item>
-    <item>
-      <title>frosty</title>
-      <link>https://mo5.ch/photography/winter/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>mail@mo5.ch (Moritz Schramm)</author>
-      <guid>https://mo5.ch/photography/winter/</guid>
-        <media:content url="https://mo5.ch/photography/winter/MSF00182_hu_226ab013f6e67c3e.JPG" type="image/jpeg"/>
-        <description>
-          &lt;img src=&quot;https://mo5.ch/photography/winter/MSF00182_hu_226ab013f6e67c3e.JPG&quot; /&gt;
-          &lt;p&gt;&lt;no value&gt;&lt;/p&gt;
-        </description></item>
-    <item>
-      <title>gloaming</title>
-      <link>https://mo5.ch/photography/sky/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>mail@mo5.ch (Moritz Schramm)</author>
-      <guid>https://mo5.ch/photography/sky/</guid>
-        <media:content url="https://mo5.ch/photography/sky/MSF00691_hu_c63296e99cb5d795.JPG" type="image/jpeg"/>
-        <description>
-          &lt;img src=&quot;https://mo5.ch/photography/sky/MSF00691_hu_c63296e99cb5d795.JPG&quot; /&gt;
-          &lt;p&gt;&lt;no value&gt;&lt;/p&gt;
-        </description></item>
-    <item>
-      <title>looming</title>
-      <link>https://mo5.ch/photography/buildings/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>mail@mo5.ch (Moritz Schramm)</author>
-      <guid>https://mo5.ch/photography/buildings/</guid>
-        <media:content url="https://mo5.ch/photography/buildings/MSF01262_hu_324496a40d251ef0.jpeg" type="image/jpeg"/>
-        <description>
-          &lt;img src=&quot;https://mo5.ch/photography/buildings/MSF01262_hu_324496a40d251ef0.jpeg&quot; /&gt;
-          &lt;p&gt;&lt;no value&gt;&lt;/p&gt;
-        </description></item>
-    <item>
-      <title>miscellaneous</title>
-      <link>https://mo5.ch/photography/misc/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>mail@mo5.ch (Moritz Schramm)</author>
-      <guid>https://mo5.ch/photography/misc/</guid>
-        <media:content url="https://mo5.ch/photography/misc/MSF01222_hu_d045cd2ebb9bbd9.JPG" type="image/jpeg"/>
-        <description>
-          &lt;img src=&quot;https://mo5.ch/photography/misc/MSF01222_hu_d045cd2ebb9bbd9.JPG&quot; /&gt;
-          &lt;p&gt;not assignable to any category&lt;/p&gt;
-        </description></item>
-    <item>
-      <title>refractions</title>
-      <link>https://mo5.ch/photography/refractions/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>mail@mo5.ch (Moritz Schramm)</author>
-      <guid>https://mo5.ch/photography/refractions/</guid>
-        <media:content url="https://mo5.ch/photography/refractions/MSF00274_hu_a515a2e766c46775.JPG" type="image/jpeg"/>
-        <description>
-          &lt;img src=&quot;https://mo5.ch/photography/refractions/MSF00274_hu_a515a2e766c46775.JPG&quot; /&gt;
-          &lt;p&gt;&lt;no value&gt;&lt;/p&gt;
-        </description></item>
-    <item>
-      <title>signs of the universe</title>
-      <link>https://mo5.ch/photography/signs/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>mail@mo5.ch (Moritz Schramm)</author>
-      <guid>https://mo5.ch/photography/signs/</guid>
-        <media:content url="https://mo5.ch/photography/signs/IMG_4075_hu_d841688e53884aad.jpeg" type="image/jpeg"/>
-        <description>
-          &lt;img src=&quot;https://mo5.ch/photography/signs/IMG_4075_hu_d841688e53884aad.jpeg&quot; /&gt;
-          &lt;p&gt;some funny, some weird, some interesting signs&lt;/p&gt;
-        </description></item>
-    <item>
-      <title>twilight</title>
-      <link>https://mo5.ch/photography/twilight/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>mail@mo5.ch (Moritz Schramm)</author>
-      <guid>https://mo5.ch/photography/twilight/</guid>
-        <media:content url="https://mo5.ch/photography/twilight/MSF00796_hu_9e397a77ebc69485.JPG" type="image/jpeg"/>
-        <description>
-          &lt;img src=&quot;https://mo5.ch/photography/twilight/MSF00796_hu_9e397a77ebc69485.JPG&quot; /&gt;
-          &lt;p&gt;&lt;no value&gt;&lt;/p&gt;
-        </description></item>
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>photography on mo5.ch/photography</title><link>https://mo5.ch/photography/</link><description>Recent content in photography on mo5.ch/photography</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><managingEditor>mail@mo5.ch (Moritz Schramm)</managingEditor><webMaster>mail@mo5.ch (Moritz Schramm)</webMaster><copyright>© 2026</copyright><atom:link href="https://mo5.ch/photography/index.xml" rel="self" type="application/rss+xml"/><item><title>blossom</title><link>https://mo5.ch/photography/flowers/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>mail@mo5.ch (Moritz Schramm)</author><guid>https://mo5.ch/photography/flowers/</guid><media:content url="https://mo5.ch/photography/flowers/MSF00903_hu_2d62369e89cfaa61.JPG" type="image/jpeg"/><description>
+&lt;img src="https://mo5.ch/photography/flowers/MSF00903_hu_2d62369e89cfaa61.JPG" /&gt;
+&lt;p&gt;&lt;no value&gt;&lt;/p&gt;</description></item><item><title>botanical</title><link>https://mo5.ch/photography/green/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>mail@mo5.ch (Moritz Schramm)</author><guid>https://mo5.ch/photography/green/</guid><media:content url="https://mo5.ch/photography/green/MSF00640_hu_bb18f379bb2d5ca3.JPG" type="image/jpeg"/><description>
+&lt;img src="https://mo5.ch/photography/green/MSF00640_hu_bb18f379bb2d5ca3.JPG" /&gt;
+&lt;p&gt;&lt;no value&gt;&lt;/p&gt;</description></item><item><title>branches</title><link>https://mo5.ch/photography/trees/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>mail@mo5.ch (Moritz Schramm)</author><guid>https://mo5.ch/photography/trees/</guid><media:content url="https://mo5.ch/photography/trees/MSF00879_hu_709b68050c6f42c0.JPG" type="image/jpeg"/><description>
+&lt;img src="https://mo5.ch/photography/trees/MSF00879_hu_709b68050c6f42c0.JPG" /&gt;
+&lt;p&gt;&lt;no value&gt;&lt;/p&gt;</description></item><item><title>clouds</title><link>https://mo5.ch/photography/clouds/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>mail@mo5.ch (Moritz Schramm)</author><guid>https://mo5.ch/photography/clouds/</guid><media:content url="https://mo5.ch/photography/clouds/MSF00940_hu_f096e4213f5189b2.JPG" type="image/jpeg"/><description>
+&lt;img src="https://mo5.ch/photography/clouds/MSF00940_hu_f096e4213f5189b2.JPG" /&gt;
+&lt;p&gt;&lt;no value&gt;&lt;/p&gt;</description></item><item><title>dune</title><link>https://mo5.ch/photography/dune/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>mail@mo5.ch (Moritz Schramm)</author><guid>https://mo5.ch/photography/dune/</guid><media:content url="https://mo5.ch/photography/dune/MSF01134_hu_167ee50099a57b0b.JPG" type="image/jpeg"/><description>
+&lt;img src="https://mo5.ch/photography/dune/MSF01134_hu_167ee50099a57b0b.JPG" /&gt;
+&lt;p&gt;&lt;no value&gt;&lt;/p&gt;</description></item><item><title>frosty</title><link>https://mo5.ch/photography/winter/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>mail@mo5.ch (Moritz Schramm)</author><guid>https://mo5.ch/photography/winter/</guid><media:content url="https://mo5.ch/photography/winter/MSF00182_hu_226ab013f6e67c3e.JPG" type="image/jpeg"/><description>
+&lt;img src="https://mo5.ch/photography/winter/MSF00182_hu_226ab013f6e67c3e.JPG" /&gt;
+&lt;p&gt;&lt;no value&gt;&lt;/p&gt;</description></item><item><title>gloaming</title><link>https://mo5.ch/photography/sky/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>mail@mo5.ch (Moritz Schramm)</author><guid>https://mo5.ch/photography/sky/</guid><media:content url="https://mo5.ch/photography/sky/MSF00691_hu_c63296e99cb5d795.JPG" type="image/jpeg"/><description>
+&lt;img src="https://mo5.ch/photography/sky/MSF00691_hu_c63296e99cb5d795.JPG" /&gt;
+&lt;p&gt;&lt;no value&gt;&lt;/p&gt;</description></item><item><title>looming</title><link>https://mo5.ch/photography/buildings/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>mail@mo5.ch (Moritz Schramm)</author><guid>https://mo5.ch/photography/buildings/</guid><media:content url="https://mo5.ch/photography/buildings/MSF01262_hu_324496a40d251ef0.jpeg" type="image/jpeg"/><description>
+&lt;img src="https://mo5.ch/photography/buildings/MSF01262_hu_324496a40d251ef0.jpeg" /&gt;
+&lt;p&gt;&lt;no value&gt;&lt;/p&gt;</description></item><item><title>miscellaneous</title><link>https://mo5.ch/photography/misc/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>mail@mo5.ch (Moritz Schramm)</author><guid>https://mo5.ch/photography/misc/</guid><media:content url="https://mo5.ch/photography/misc/MSF01222_hu_d045cd2ebb9bbd9.JPG" type="image/jpeg"/><description>
+&lt;img src="https://mo5.ch/photography/misc/MSF01222_hu_d045cd2ebb9bbd9.JPG" /&gt;
+&lt;p&gt;not assignable to any category&lt;/p&gt;</description></item><item><title>refractions</title><link>https://mo5.ch/photography/refractions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>mail@mo5.ch (Moritz Schramm)</author><guid>https://mo5.ch/photography/refractions/</guid><media:content url="https://mo5.ch/photography/refractions/MSF00274_hu_a515a2e766c46775.JPG" type="image/jpeg"/><description>
+&lt;img src="https://mo5.ch/photography/refractions/MSF00274_hu_a515a2e766c46775.JPG" /&gt;
+&lt;p&gt;&lt;no value&gt;&lt;/p&gt;</description></item><item><title>signs of the universe</title><link>https://mo5.ch/photography/signs/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>mail@mo5.ch (Moritz Schramm)</author><guid>https://mo5.ch/photography/signs/</guid><media:content url="https://mo5.ch/photography/signs/IMG_4075_hu_d841688e53884aad.jpeg" type="image/jpeg"/><description>
+&lt;img src="https://mo5.ch/photography/signs/IMG_4075_hu_d841688e53884aad.jpeg" /&gt;
+&lt;p&gt;some funny, some weird, some interesting signs&lt;/p&gt;</description></item><item><title>twilight</title><link>https://mo5.ch/photography/twilight/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><author>mail@mo5.ch (Moritz Schramm)</author><guid>https://mo5.ch/photography/twilight/</guid><media:content url="https://mo5.ch/photography/twilight/MSF00796_hu_9e397a77ebc69485.JPG" type="image/jpeg"/><description>
+&lt;img src="https://mo5.ch/photography/twilight/MSF00796_hu_9e397a77ebc69485.JPG" /&gt;
+&lt;p&gt;&lt;no value&gt;&lt;/p&gt;</description></item></channel></rss>
