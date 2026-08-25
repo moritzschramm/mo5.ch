@@ -486,7 +486,7 @@
                 effectEnvelope = Math.pow(1 - effectElapsed / CLICK_DURATION, 2); // ease out
             }
         }
-        var rippleStrength = (activeEffect === 'ripple') ? effectEnvelope * 150.0 : 0;
+        var rippleStrength = (activeEffect === 'ripple') ? effectEnvelope * 60.0 : 0;
         var rippleFront = (activeEffect === 'ripple') ? (effectElapsed / CLICK_DURATION) * (RING_COUNT * 1.3) : 0;
 
         pointerX += (pointerTargetX - pointerX) * POINTER_SMOOTHING;
